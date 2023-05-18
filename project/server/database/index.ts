@@ -1,14 +1,14 @@
-const mysql = require('mysql2');
-const config = require('./config')
+import mysql from 'mysql2';
+import config from './config';
 
-const connection = mysql.createConnection(config)
+const connection = mysql.createConnection(config);
 
-connection.connect((error: string) => {
-  if (error) { 
-    console.log(error)
+connection.connect((error: URIError | null) => {
+  if (error) {
+    console.log(error);
   } else {
-    console.log('Connected to database')
+    console.log('Connected to database');
   }
-})
+});
 
-module.exports = connection
+export default connection;
