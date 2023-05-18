@@ -1,3 +1,4 @@
+
 // const mysql = require('mysql2');
 // const config = require('./config')
 import mysql from 'mysql2'
@@ -9,9 +10,10 @@ connection.connect((error: URIError | null) => {
   if (error) { 
     console.log(error)
   } else {
-    console.log('Connected to database')
+    console.log('Connected to database');
   }
-})
+});
+
 function insertDummyData(): void {
     data.forEach((product: any) => {
       const { name, image, price, quantity, gender, category, description } = product;
@@ -37,3 +39,4 @@ function insertDummyData(): void {
   
 export default connection
 //module.exports = connection
+
