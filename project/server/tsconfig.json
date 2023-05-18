@@ -5,9 +5,9 @@
       "strict": true,
       "esModuleInterop": true,
       "outDir": "./dist",
-      "rootDir": "./"
+      "rootDir": "./",
+      "resolveJsonModule": true
     },
-    "include": ["src/**/*.ts"],
+    "include": ["src/*/.ts"],
     "exclude": ["node_modules"]
   }
-  

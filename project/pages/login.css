@@ -3,89 +3,104 @@
     border-bottom-left-radius: 0.5rem;
   }
 
-@media (max-width: 550px) {
+  @media (max-width: 550px) {
     .rounded-tr-lg-0 {
-        border-top-right-radius: 0.5rem;
-        border-bottom-left-radius: 0rem;
+      border-top-right-radius: 0.5rem;
+      border-bottom-left-radius: 0rem;
     }
-}
+  }
 
-input#form1 {
-    width: 29.482vw;
-}
-
-#signup-container {
+#login-container {
     margin: 0;
     margin-top: 2rem;
     padding: 0;
 }
 
-#signup-card {
+#login-card {
     border: none;
-    width: 40vw;
+    width: 30vw;
     display: flex;
     justify-self: flex-start;
 }
 
-#signup-page {
+#login-page {
     font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     background-color: white;
     margin-top: 9rem;
     margin-left: 5rem;
 }
 
-#signup-page h1 {
-    margin-left: 1.27em;
+#login-page h1 {
+    margin-left: 0.03em;
     text-transform: uppercase;
     font-size: 14px;
     font-weight: 550;
 }
 
-#signup-page input {
+#login-page input {
     border: none;
     border-radius: 0;
     border-bottom: 1px solid gray;
+    width: 130%;
 }
 
-#signup-page input:focus {
+#login-page input:focus {
     outline: none;
     box-shadow: none;
 }
 
-.card-body {
+#card-body {
     padding: 0;
 }
 
-#signup-page input::placeholder {
+#login-page input::placeholder {
     font-size: 10px;
 }
 
-button.signup-btn {
-    text-transform: uppercase;
-    font-size: 14px;
-    font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+button.login-btn {
     background-color: black;
     border-radius: 0;
     border: none;
     width: 20vw;
 }
 
-button.signup-btn:hover {
+button.login-btn:hover {
     background-color: rgb(41, 41, 41);
     border-radius: 0;
     border: none;
 }
 
-#signup-card a {
+#login-card a {
     text-decoration: none;
     font-size: 10px;
     color: gray;
 }
 
-.dbl-input .pw-input:last-of-type {
-    margin-left: 2rem
+#need-account {
+    width: 56vw;
+    /* background: red; */
 }
 
-.input {
-    width: 30%;
-}   
+#need-account h3 {
+    margin-left: 1em;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 550;
+}
+
+button#register-btn {
+    width: 29vw;
+    margin-top: 2rem;
+    background: white;
+    border: 1px solid black;
+    color: rgb(77, 77, 77);
+    border-radius: 0;
+}
+
+button#register-btn:hover {
+    width: 29vw;
+    margin-top: 2rem;
+    background: white;
+    border: 1px solid rgb(77, 77, 77);
+    border-radius: 0;
+}
