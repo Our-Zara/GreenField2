@@ -1,6 +1,6 @@
 'use client';
 import 'bootstrap/dist/css/bootstrap.css'
-import React, {useState} from 'react';
+import React, {FormEvent, useState} from 'react';
 import {
   MDBBtn,
   MDBContainer,
@@ -18,10 +18,28 @@ import Link from 'next/link';
 function signup() {
     const [firstname, setFirstName] = useState<String>('');
     const [lastname, setLastName] = useState<String>('');
-    const [firstname, setFirstName] = useState<String>('');
-    const [firstname, setFirstName] = useState<String>('');
+    const [email ,setEmail] = useState<String>('');
+    const [password, setPassword] = useState<String>('');
+    const [conpassword, setConPassword] = useState<String>('');
 
-    const handleSubmit=()=>{}
+
+    const handleSubmit=(e:FormEvent)=>{
+
+        axios.post ('http://localhost:4001/api/signup',{
+            firstname:firstname,
+            lastname:lastname,
+             email:email,
+             password:password
+            })
+            .then((succes)=>{
+                console.log(succes)
+            return alert("WELCOME TO ZARA ")
+            })
+            .catch((err)=>{
+              console.log(err)
+             alert("please don't play with us ")
+            })
+    }
     return (
         <MDBContainer className='' id="signup-container">
           <MDBRow className='g-0 d-flex'>
@@ -39,15 +57,15 @@ function signup() {
                         <MDBInput wrapperClass='mb-4' className='input' placeholder='PASSWORD' type='password' onChange={(e) => setPassword(e.target.value)}/>
                     </MDBCol>
                     <MDBCol className='pw-input'>
-                        <MDBInput wrapperClass='mb-4' className='input' placeholder='CONFIRM PASSWORD' type='password' onChange={(e) => setConfPassword(e.target.value)}/>
+                        <MDBInput wrapperClass='mb-4' className='input' placeholder='CONFIRM PASSWORD' type='password' onChange={(e) => setConPassword(e.target.value)}/>
                     </MDBCol>
                 </MDBRow>
                 <MDBRow style={{width: "65vw", marginBottom: "4rem"}} className='dbl-input'>
                     <MDBCol className='pw-input'>
-                        <MDBInput wrapperClass='mb-4' className='input' placeholder='NAME' type='text' onChange={(e) => setName(e.target.value)}/>
+                        <MDBInput wrapperClass='mb-4' className='input' placeholder='NAME' type='text' onChange={(e) =>setFirstName(e.target.value)}/>
                     </MDBCol>
                     <MDBCol className='pw-input'>
-                        <MDBInput wrapperClass='mb-4' className='input' placeholder='SURNAME' type='text' onChange={(e) => setSurname(e.target.value)}/>
+                        <MDBInput wrapperClass='mb-4' className='input' placeholder='SURNAME' type='text' onChange={(e) => setLastName(e.target.value)}/>
                     </MDBCol>
                 </MDBRow>
     

@@ -39,7 +39,7 @@
 
 #login-page input {
     border: none;
-    border-radius: 0;
+    border-radius:1;
     border-bottom: 1px solid gray;
     width: 130%;
 }
@@ -77,7 +77,8 @@ button.login-btn:hover {
 }
 
 #need-account {
-    width: 56vw;
+    width:76vw; 
+   
     /* background: red; */
 }
 

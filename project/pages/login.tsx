@@ -1,6 +1,6 @@
 'use client';
 import 'bootstrap/dist/css/bootstrap.css'
-import React, {useState} from 'react';
+import React, {FormEvent, useState} from 'react';
 import {
   MDBBtn,
   MDBContainer,
@@ -14,14 +14,14 @@ from 'mdb-react-ui-kit';
 
 import axios from 'axios';
 import Link from 'next/link';
-import "./login.css"
+// import "./login.css"
 
 
 function Login() {
     const [email, setEmail] = useState<string>(" ");
     const [password, setPassword] = useState<string>(" ");
 
-const handleSubmit= async (e:Event)=>{
+const handleSubmit= async (e:FormEvent)=>{
     try {
         e.preventDefault();
         if (email === "" || password === "") {
@@ -51,7 +51,7 @@ const handleSubmit= async (e:Event)=>{
             <MDBCol md='6'>
     
               <MDBCardBody id="card-body">
-                <form >
+              <form onSubmit={(e) => handleSubmit(e)}>              
                 <MDBInput wrapperClass='mb-4' placeholder='E-MAIL' id='form1' type="email" onChange={(e) => setEmail(e.target.value)}/>
                 <MDBInput wrapperClass='mb-4' placeholder='PASSWORD' id='form2' type='password' onChange={(e) => setPassword(e.target.value)}/>
     
@@ -66,9 +66,9 @@ const handleSubmit= async (e:Event)=>{
             </MDBCol>
     
             </MDBCard>
-            <MDBCol md={6} id="need-account">
+            <MDBCol mdCOL={6} mdROW={19} id="need-account">
               <h3>Need an Account?</h3>
-             <Link href={"/signup"}> <MDBBtn className="mb-4" id="register-btn"> Register</MDBBtn></Link> 
+             <Link href={"/signup"}> <MDBBtn className="mb-4" id="register-btn">Register</MDBBtn></Link> 
     
             </MDBCol>
           </MDBRow>
