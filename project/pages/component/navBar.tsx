@@ -21,7 +21,7 @@ const NavBar = () => {
           </Navbar.Brand>
 
           <Nav.Link href="/details">
-            aaa
+            Collection
           </Nav.Link>
 
           <Navbar.Toggle aria-controls="navbarScroll" />

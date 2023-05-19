@@ -8,7 +8,7 @@ const port :number= 4001
 app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
-app.use("/zara", routerP)
+app.use("/zara/product", routerP)
 
 app.get('/', (req:Request, res:Response)=>{
   return res.send("hello world")
