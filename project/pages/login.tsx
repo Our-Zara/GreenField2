@@ -32,7 +32,7 @@ const handleSubmit= async (e:FormEvent)=>{
           password: password
         });
         if (response.data === "you are logged") {
-          return alert("Welcom to zara");
+          return alert("Welcome to zara");
         } else {
           alert(response.data);
         }

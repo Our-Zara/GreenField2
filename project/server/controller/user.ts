@@ -28,7 +28,7 @@ const getUser = (req: Request, res: Response) => {
         User.signUp(Newuser, (err: Error | null, results: any[] | null) => {
           if (err) {
             console.log(err);
-            return res.status(500).json({ message: 'Something went wrong', err });
+            return res.status(500).send({ message: 'Something went wrong', err });
           }
     
           const token = jwt.sign(
