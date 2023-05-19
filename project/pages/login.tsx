@@ -17,33 +17,28 @@ import Link from 'next/link';
 
 
  function Login() {
-//     const [email, setEmail] = useState<string>(" ");
-//     const [password, setPassword] = useState<string>(" ");
+    const [email, setEmail] = useState<string>(" ");
+    const [password, setPassword] = useState<string>(" ");
 
-// const handleSubmit= async (e:React.FormEvent)=>{
-//   const user={
-//     email,
-//     password
-//   }
-//     try {
-//         e.preventDefault();
-//         if (email === "" || password === "") {
-//           return alert("fill the rows please");
-//         }
-//         const response = await axios.post('http://localhost:4001/api/login',user, {
-//        headers: {
-//         'Content-Type': 'application/json'
-//         }
-//         });
-//         if (response.data === "you are logged") {
-//           return alert("Welcom to zara");
-//         } else {
-//           alert(response.data);
-//         }
-//       } catch (error) {
-//         alert("check your password or email");
-//       }
-// }
+const handleSubmit= async (e:FormEvent)=>{
+    try {
+        e.preventDefault();
+        if (email === "" || password === "") {
+          return alert("fill the rows please");
+        }
+        const response = await axios.post('http://localhost:4001/api/login', {
+          email: email,
+          password: password
+        });
+        if (response.data === "you are logged") {
+          return alert("Welcom to zara");
+        } else {
+          alert(response.data);
+        }
+      } catch (error) {
+        alert("check your password or email");
+      }
+}
 
     return (
         <MDBContainer id="login-container">

@@ -14,24 +14,24 @@ const db= connection.connect((error: URIError | null) => {
   }
 });
 
-function insertDummyData(): void {
-    data.forEach((product: any) => {
-      const { name, image, price, quantity, gender, category, description } = product;
+// function insertDummyData(): void {
+//     data.forEach((product: any) => {
+//       const { name, image, price, quantity, gender, category, description } = product;
   
-      const query = `
-        INSERT INTO products (name, image, price, quantity, gender, category, description)
-        VALUES (?, ?, ?, ?, ?, ?, ?)
-      `;
+//       const query = `
+//         INSERT INTO products (name, image, price, quantity, gender, category, description)
+//         VALUES (?, ?, ?, ?, ?, ?, ?)
+//       `;
   
-      connection.query(query, [name, image, price, quantity, gender, category, description], (error, results) => {
-        if (error) {
-          console.log(`Failed to insert product: ${error}`);
-        } else {
-          console.log(`Product inserted successfully`);
-        }
-      });
-    });
-  } insertDummyData() 
+//       connection.query(query, [name, image, price, quantity, gender, category, description], (error, results) => {
+//         if (error) {
+//           console.log(`Failed to insert product: ${error}`);
+//         } else {
+//           console.log(`Product inserted successfully`);
+//         }
+//       });
+//     });
+//   } insertDummyData() 
 
 
   

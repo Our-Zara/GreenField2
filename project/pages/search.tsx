@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { MDBInput } from 'mdb-react-ui-kit';
 import data from '../server/database/db.json';
-
+import Postdetail from './details'
+import Link from 'next/link';
 interface Product {
   category: string;
 }
@@ -30,7 +31,11 @@ function Search() {
         />
       </div>
       {filteredData.map((el: Product, index: number) => (
-        <div key={index}>{el.category}</div>
+        <div key={index}>
+          <Link href='/details' el={el} > {el.category} </Link>
+          
+        {/* <Postdetail el={el}/> */}
+        </div>
       ))}
     </form>
   );
