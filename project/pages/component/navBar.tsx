@@ -38,7 +38,7 @@ const NavBar = () => {
 
             <div>
               <Nav.Link
-                href="/Search"
+                href="/search"
                 style={{
                 fontFamily: "Arial, Helvetica, sans-serif", fontSize: "17px",
                   marginRight: "60px",

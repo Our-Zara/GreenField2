@@ -15,31 +15,33 @@ from 'mdb-react-ui-kit';
 import axios from 'axios';
 import Link from 'next/link';
 
-function signup() {
-    const [firstname, setFirstName] = useState<String>('');
-    const [lastname, setLastName] = useState<String>('');
-    const [email ,setEmail] = useState<String>('');
-    const [password, setPassword] = useState<String>('');
-    const [conpassword, setConPassword] = useState<String>('');
+function Signup() {
+     const [firstname, setFirstName] = useState<String>('');
+     const [lastname, setLastName] = useState<String>('');
+     const [email ,setEmail] = useState<String>('');
+     const [password, setPassword] = useState<String>('');
+     const [conpassword, setConPassword] = useState<String>('');
 
-
-    const handleSubmit=(e:FormEvent)=>{
-
-        axios.post ('http://localhost:4001/api/signup',{
-            firstname:firstname,
-            lastname:lastname,
-             email:email,
-             password:password
-            })
-            .then((succes)=>{
-                console.log(succes)
-            return alert("WELCOME TO ZARA ")
-            })
-            .catch((err)=>{
-              console.log(err)
-             alert("please don't play with us ")
-            })
-    }
+    const [error, setError] = useState<string>("");
+  
+    const handleSubmit = () => {
+      axios.post("http://localhost:4001/api/signup", {
+        firstname: firstname,
+        lastname:lastname,
+        email: email,
+        password: password,
+        conpassword:conpassword
+      })
+      .then(suc => {
+        console.log(suc);
+        setError('CREATED')
+      })
+      .catch(err => {
+        console.log(err);
+        setError(err.response.data);
+      });
+    };
+      
     return (
         <MDBContainer className='' id="signup-container">
           <MDBRow className='g-0 d-flex'>
@@ -50,7 +52,7 @@ function signup() {
             <MDBCol md='8'>
     
               <MDBCardBody className="card-body">
-                <form onSubmit={(e) => handleSubmit(e)}>
+                <form >
                 <MDBInput wrapperClass='mb-4' placeholder='E-MAIL' id='form1' className='input' onChange={(e) => setEmail(e.target.value)}/>
                 <MDBRow style={{width: "65vw"}} className='dbl-input'>
                     <MDBCol className='pw-input'>
@@ -69,7 +71,7 @@ function signup() {
                     </MDBCol>
                 </MDBRow>
     
-                <MDBBtn className="mb-4 signup-btn">Create Account</MDBBtn>
+               <Link href={"/login"}> <MDBBtn className="mb-4 signup-btn" onClick={(e)=>{handleSubmit}}>Create Account</MDBBtn></Link>
                 </form> 
               </MDBCardBody>
     
@@ -83,4 +85,4 @@ function signup() {
       );  
 }
 
-export default signup
+export default Signup
