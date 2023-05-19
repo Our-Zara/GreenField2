@@ -27,14 +27,32 @@ const model = {
       callback(err, result);
     });
   },
+  getShirtsM: function (callback: any) {
+    const sql = "SELECT * FROM products WHERE category = 'shirt' and gender='men'";
+    connection.query(sql, function (err: any, result: any) {
+      callback(err, result);
+    });
+  },
   getShoes: function (callback: any) {
     const sql = "SELECT * FROM products WHERE category = 'shoes'";
     connection.query(sql, function (err: any, result: any) {
       callback(err, result);
     });
   },
+  getShoesM: function (callback: any) {
+    const sql = "SELECT * FROM products WHERE category = 'shoes' and gender='men'";
+    connection.query(sql, function (err: any, result: any) {
+      callback(err, result);
+    });
+  },
   getJeans: function (callback: any) {
     const sql = "SELECT * FROM products WHERE category = 'jeans'";
+    connection.query(sql, function (err: any, result: any) {
+      callback(err, result);
+    });
+  },
+  getJeansM: function (callback: any) {
+    const sql = "SELECT * FROM products WHERE category = 'jeans' and gender='men'";
     connection.query(sql, function (err: any, result: any) {
       callback(err, result);
     });
@@ -59,6 +77,12 @@ const model = {
   },
   getPerfume: function (callback: any) {
     const sql = "SELECT * FROM products WHERE category = 'perfume'";
+    connection.query(sql, function (err: any, result: any) {
+      callback(err, result);
+    });
+  },
+  getPerfumeM: function (callback: any) {
+    const sql = "SELECT * FROM products WHERE category = 'perfume' AND gender='men'";
     connection.query(sql, function (err: any, result: any) {
       callback(err, result);
     });
