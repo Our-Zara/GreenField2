@@ -14,7 +14,6 @@ input#form1 {
     width: 29.482vw;
 }
 
-
 #signup-container {
     margin: 0;
     margin-top: 11rem;
@@ -62,25 +61,25 @@ input#form1 {
 }
 
 button.signup-btn {
-    text-transform: uppercase black;
-        font-size: 14px;
+    text-transform: uppercase;
+    font-size: 14px;
     font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     background-color: rgb(177, 177, 177);
     border-radius: 0;
-    border : 2px solid black;
+    border: none;
     width: 20vw;
 }
 
 button.signup-btn:hover {
-    background-color: rgb(196, 196, 196);
+    background-color: rgb(218, 206, 206);
     border-radius: 0;
-    border : 2px solid black;
+    border: none;
 }
 
 #signup-card a {
     text-decoration: none;
     font-size: 10px;
-    color: rgb(255, 255, 255);
+    color: gray;
 }
 
 .dbl-input .pw-input:last-of-type {
@@ -89,4 +88,4 @@ button.signup-btn:hover {
 
 .input {
     width: 30%;
-}   
+}
