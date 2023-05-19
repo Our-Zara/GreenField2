@@ -1,7 +1,8 @@
 import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
+import  Navbar from 'react-bootstrap/Navbar';
+import Products from "../details"
 //import Sidebar from './sidebar';
 
 const NavBar = () => {
@@ -9,13 +10,19 @@ const NavBar = () => {
     <div>
       <Navbar bg="transparent" expand="lg" variant="light" className="navbares" fixed="top">
         {/* <Sidebar  /> */}
+    
         <Container fluid>
+        
           <Navbar.Brand href="/">
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Zara_Logo.svg/2560px-Zara_Logo.svg.png"
               style={{ marginLeft: "100px", width: "200px", height: "90px" }}
             />
           </Navbar.Brand>
+
+          <Nav.Link href="/details">
+            Collection
+          </Nav.Link>
 
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
