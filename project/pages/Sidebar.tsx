@@ -28,23 +28,18 @@ export default function Sidebar() {
           <h3>Women</h3>
           <ul className="category-list">
             <li>
+              <Link href="/women/top"  >
+                <span className="category-item">Tops</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/women/shirts">
+                <span className="category-item">Shirts</span>
+              </Link>
+            </li>
+            <li>
               <Link href="/women/skirt"  >
-                <span className="category-item">Skirt</span>
-              </Link>
-            </li>
-            <li>
-              <Link href="/women/shirt">
-                <span className="category-item">Shirt</span>
-              </Link>
-            </li>
-            <li>
-              <Link href="/women/perfume">
-                <span className="category-item">Perfume</span>
-              </Link>
-            </li>
-            <li>
-              <Link href="/women/top">
-                <span className="category-item">Top</span>
+                <span className="category-item">Skirts</span>
               </Link>
             </li>
             <li>
@@ -53,22 +48,38 @@ export default function Sidebar() {
               </Link>
             </li>
             <li>
+              <Link href="/women/shoes">
+                <span className="category-item">Shoes</span>
+              </Link>
+            </li>
+            <li>
               <Link href="/women/bag">
                 <span className="category-item">Bag</span>
               </Link>
             </li>
-          </ul>
+            <li>
+              <Link href="/women/perfume">
+                <span className="category-item">Perfume</span>
+              </Link>
+            </li>
+           
+            </ul>
 
           <h3>Men</h3>
           <ul className="category-list">
             <li>
-              <Link href="/men/shirt">
-                <span className="category-item">Shirt</span>
+              <Link href="/men/shirts">
+                <span className="category-item">Shirts</span>
               </Link>
             </li>
             <li>
-              <Link href="/men/jeans">
+              <Link href="/men/perfume">
                 <span className="category-item">Jeans</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/men/shoes">
+                <span className="category-item">Shoes</span>
               </Link>
             </li>
             <li>

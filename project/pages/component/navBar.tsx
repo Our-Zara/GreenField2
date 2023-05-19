@@ -19,10 +19,7 @@ const NavBar = () => {
             />
           </Navbar.Brand>
 
-          <Nav.Link href="/details">
-            Collection
-          </Nav.Link>
-
+        
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: '100px' }} navbarScroll>
@@ -61,13 +58,13 @@ const NavBar = () => {
 
             <div>
               <Nav.Link
-                href="/Search"
+                href="/details"
                 style={{
                     fontFamily: "Arial, Helvetica, sans-serif", fontSize: "17px",
                   marginLeft: "70px",
                 }}
               >
-               Help
+               Collection
               </Nav.Link>
             </div>
             <div>
