@@ -11,12 +11,17 @@ const NavBar = () => {
       
         <Sidebar  />
         <Container fluid>
+        
           <Navbar.Brand href="/">
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Zara_Logo.svg/2560px-Zara_Logo.svg.png"
               style={{ marginLeft: "100px", width: "200px", height: "90px" }}
             />
           </Navbar.Brand>
+
+          <Nav.Link href="/details">
+            Collection
+          </Nav.Link>
 
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
