@@ -2,13 +2,14 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-//import Sidebar from './sidebar';
+import Sidebar from '../Sidebar';
 
 const NavBar = () => {
   return (
     <div>
       <Navbar bg="transparent" expand="lg" variant="light" className="navbares" fixed="top">
-        {/* <Sidebar  /> */}
+      
+        <Sidebar  />
         <Container fluid>
           <Navbar.Brand href="/">
             <img

@@ -4,7 +4,8 @@ import { Request, Response } from 'express';
 
 const controller={
     getCart: function(req : Request,res : Response){
-        model.getAllCart((err:any, results:any) => {
+        const userID = req.params.id
+        model.getAllCart(userID,(err:any, results:any) => {
             if (err) res.status(500).send(err);
             else res.json(results);
           })
