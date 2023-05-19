@@ -10,11 +10,13 @@ import {
 } from "mdb-react-ui-kit";
 
 function Products() {
-  const [data, setData] = useState([]);
+  const [gender, setGender] = useState('');
+  const [category,setCategory]=useState('');
+  const [data,setData]=useState([])
 
   const fetchData = () => {
     axios
-      .get("http://localhost:4001/zara/product/products")
+      .get(`http://localhost:4001/zara/product/${gender}/${category}`)
       .then((res) => {
         setData(res.data);
       })
@@ -24,8 +26,13 @@ function Products() {
   };
 
   useEffect(() => {
-    fetchData();
-  }, []);
+    setCategory(window.location.pathname.split("/")[2])
+    setGender(window.location.pathname.split("/")[1])
+    if (category && gender) {
+        fetchData();
+    }
+    
+  }, [category, gender]);
 
   return (
     <MDBContainer style={{marginTop : "150px"}}>
