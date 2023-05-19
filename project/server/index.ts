@@ -8,13 +8,12 @@ import routerC from './routes/cart';
 
 const app :Express= express()
 const port :number= 4001
-app.use('/api', router);
+app.use("/api", router);
 app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 //app.use("/zara/user",router)
 app.use("/zara/cart",routerC)
-app.use("/api",router)
 app.use("/zara/product", routerP)
 
 db

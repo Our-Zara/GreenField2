@@ -46,13 +46,13 @@ const getUser = (req: Request, res: Response) => {
 
 const userLogin = async (req: Request, res: Response) => {
   try {
-    const email: string = req.body.email;
+    const mail: any=req.body.email;
     const password: string = req.body.password;
 
-    User.login(email, async (err, user) => {
+    User.login(mail, async (err, user) => {
       if (err) {
         console.error(err);
-        return res.status(500).send("An error occurred");
+        return res.status(500).send("An error occurred 1");
       }
       if (!user)
         return res.status(401).send("Your email address or password is invalid");
@@ -71,12 +71,12 @@ const userLogin = async (req: Request, res: Response) => {
         }
       } catch (err) {
         console.error(err);
-        return res.status(500).send("An error occurred");
+        return res.status(500).send("An error occurred 2");
       }
     });
-  } catch (err) {
+  } catch (err: any) {
     console.error(err);
-    return res.status(500).send("An error occurred");
+    return res.status(500).send("An error occurred 3");
   }
 };
 

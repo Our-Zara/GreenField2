@@ -16,15 +16,15 @@ export default {
         callback(err, result);
       });
     },
-    signUp(user: User, callback: (error: Error | null, result: any) => void) {
+    signUp(user:any, callback: (error: Error | null, result: any) => void) {
       const sql = `INSERT INTO users SET ?`;
       connection.query(sql, user, function (err, result) {
         callback(err, result);
       });
     },
-    login(email: string, callback: (error: Error | null, result: any) => void) {
+    login(email: any, callback: (error: Error | null, result: any) => void) {
       const sql = `SELECT * FROM users WHERE email=?`;
-      connection.query(sql, [email], function (err, result) {
+      connection.query(sql, email, function (err, result) {
         callback(err, result);
       });
     },
