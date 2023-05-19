@@ -35,7 +35,7 @@ const NavBar = () => {
 
             <div>
               <Nav.Link
-                href="/Search"
+                href="/search"
                 style={{
                 fontFamily: "Arial, Helvetica, sans-serif", fontSize: "15px",
                   marginRight: "60px",
@@ -55,7 +55,7 @@ const NavBar = () => {
 
             <div>
               <Nav.Link
-                href="/Search"
+                href=""
                 style={{
                     fontFamily: "Arial, Helvetica, sans-serif", fontSize: "15px",
                   marginLeft: "70px",

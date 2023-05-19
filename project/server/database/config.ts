@@ -1,4 +1,4 @@
-const config = {
+export default  {
    host: "localhost",
    user:"root",
    password:"1919",

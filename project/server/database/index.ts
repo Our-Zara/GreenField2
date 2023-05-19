@@ -1,12 +1,12 @@
 
 // const mysql = require('mysql2');
-// const config = require('./config')
+//  const config = require('../database/config')
 import mysql from 'mysql2'
-import config from './config'
+ import config from './config'
 const connection = mysql.createConnection(config)
 import data from './db.json'
 
-connection.connect((error: URIError | null) => {
+const db= connection.connect((error: URIError | null) => {
   if (error) { 
     console.log(error)
   } else {
@@ -31,12 +31,11 @@ function insertDummyData(): void {
         }
       });
     });
-  } insertDummyData()
+  } insertDummyData() 
 
 
   
   
-  
-export default connection
+  export default connection 
 //module.exports = connection
 

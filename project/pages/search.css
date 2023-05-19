@@ -1,0 +1,8 @@
+input#form2 {
+    width: 29.482vw;
+    margin-top: 9rem;
+    margin-left: 5rem;
+}
+#search  input::placeholder {
+    font-size: 10px;
+}
