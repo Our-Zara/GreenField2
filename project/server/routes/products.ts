@@ -3,7 +3,7 @@ import controller from "../controller/product"
 
 const routerP = express.Router()
 
-routerP.get("/women",controller.getGenderWoman)
-routerP.get("/men",controller.getGenderMan)
+routerP.get("/women",controller.getGenderWomen)
+routerP.get("/men",controller.getGenderMen)
 
 export default routerP

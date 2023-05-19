@@ -24,11 +24,60 @@ export default function Sidebar() {
           </button>
         </div>
 
-        <Nav className="flex-column">
-          <Nav.Link href="/women">Women</Nav.Link>
-          <Nav.Link href="/men">Men</Nav.Link>
-          
-        </Nav>
+        <div className="sidebar-menu">
+          <h3>Women</h3>
+          <ul className="category-list">
+            <li>
+              <Link href="/women/skirt"  >
+                <span className="category-item">Skirt</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/women/shirt">
+                <span className="category-item">Shirt</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/women/perfume">
+                <span className="category-item">Perfume</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/women/top">
+                <span className="category-item">Top</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/women/jeans">
+                <span className="category-item">Jeans</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/women/bag">
+                <span className="category-item">Bag</span>
+              </Link>
+            </li>
+          </ul>
+
+          <h3>Men</h3>
+          <ul className="category-list">
+            <li>
+              <Link href="/men/shirt">
+                <span className="category-item">Shirt</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/men/jeans">
+                <span className="category-item">Jeans</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/men/perfume">
+                <span className="category-item">Perfume</span>
+              </Link>
+            </li>
+          </ul>
+        </div>
       </div>
 
       <style jsx>{`
@@ -36,7 +85,7 @@ export default function Sidebar() {
           position: fixed;
           top: 20px;
           left: 20px;
-          z-index: 1000; /* Increase the z-index to make the icon visible */
+          z-index: 1000;
           cursor: pointer;
           background: transparent;
           border: none;
@@ -60,7 +109,7 @@ export default function Sidebar() {
           overflow-y: auto;
           transform: translateX(-100%);
           transition: transform 0.3s ease-in-out;
-          z-index: 999; /* Increase the z-index to make the sidebar appear above other elements */
+          z-index: 999;
         }
 
         .sidebar.open {
@@ -70,7 +119,7 @@ export default function Sidebar() {
         .sidebar-header {
           padding: 15px;
           background-color: black;
-          color:white;
+          color: white;
         }
 
         .close-btn {
@@ -82,6 +131,35 @@ export default function Sidebar() {
 
         .close-icon {
           font-size: 24px;
+        }
+
+        .sidebar-menu {
+          padding: 20px;
+        }
+
+        .category-list {
+          list-style-type: none;
+          padding: 0;
+          margin: 0;
+          color:black;
+        }
+
+        .category-list li {
+          margin-bottom: 10px;
+          color:black;
+          text-decoration: none;
+
+
+        }
+
+        .category-item {
+          display: block;
+          margin-left : 120px
+          color: black;
+          text-decoration: none;
+
+          color:black;
+
         }
       `}</style>
     </>
