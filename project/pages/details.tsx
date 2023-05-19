@@ -14,7 +14,7 @@ function Products() {
 
   const fetchData = () => {
     axios
-      .get("http://localhost:4001/zara/products")
+      .get("http://localhost:4001/zara/product/products")
       .then((res) => {
         setData(res.data);
       })
