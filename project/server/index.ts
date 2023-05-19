@@ -1,6 +1,5 @@
 import express,{Express,Request, Response } from 'express';
 import * as db from './database/index';
-const router = require ( './routes/user');
 
 import cors from 'cors';
 import router from "./routes/user"
