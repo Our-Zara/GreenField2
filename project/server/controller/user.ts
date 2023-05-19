@@ -45,6 +45,7 @@ const getUser = (req: Request, res: Response) => {
     };
   const userLogin = async (req: Request, res: Response) => {
     try {
+      const id:Number=req.body.id;
       const email: string = req.body.email;
       const password: string = req.body.password;
   
@@ -64,7 +65,7 @@ const getUser = (req: Request, res: Response) => {
               expiresIn: '1h',
             });
   
-            return res.status(200).json({ token, message: 'You logged in successfully' });
+            return res.status(200).send(id).json({ token, message: 'You logged in successfully' });
           } else {
             return res.status(401).json({ message: 'Invalid password' });
           }

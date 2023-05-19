@@ -37,7 +37,7 @@ const NavBar = () => {
               <Nav.Link
                 href="/Search"
                 style={{
-                fontFamily: "Arial, Helvetica, sans-serif", fontSize: "15px",
+                fontFamily: "Arial, Helvetica, sans-serif", fontSize: "17px",
                   marginRight: "60px",
                   //textDecoration: "underline",
                 }}
@@ -57,18 +57,23 @@ const NavBar = () => {
               <Nav.Link
                 href="/Search"
                 style={{
-                    fontFamily: "Arial, Helvetica, sans-serif", fontSize: "15px",
+                    fontFamily: "Arial, Helvetica, sans-serif", fontSize: "17px",
                   marginLeft: "70px",
                 }}
               >
                Help
               </Nav.Link>
             </div>
-
+            <div>
+            <Nav.Link
+                href="/cart" 
+            >
             <img 
               src="https://cdn.discordapp.com/attachments/1073948141822427256/1108700360891183175/aFtEKyQmH8K26qurE22yD-transformed.png"
-              style={{ marginLeft: "80px", width: "60px", height: "50px" }}
+              style={{ marginLeft: "40px", width: "40px", height: "40px" }}
             />
+            </Nav.Link>
+            </div>
           </Navbar.Collapse>
         </Container>
       </Navbar>
