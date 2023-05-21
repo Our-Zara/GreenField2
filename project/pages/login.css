@@ -38,10 +38,9 @@
 }
 
 #login-page input {
-    border: none;
-    border-radius:1;
-    border-bottom: 1px solid gray;
-    width: 130%;
+    color: var(--color-content-high);
+    display: flex;
+    width: 100%;
 }
 
 #login-page input:focus {

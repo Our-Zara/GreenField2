@@ -17,33 +17,31 @@ import Link from 'next/link';
 
 
  function Login() {
-//     const [email, setEmail] = useState<string>(" ");
-//     const [password, setPassword] = useState<string>(" ");
+    const [email, setEmail] = useState<string>(" ");
+    const [password, setPassword] = useState<string>(" ");
 
-// const handleSubmit= async (e:React.FormEvent)=>{
-//   const user={
-//     email,
-//     password
-//   }
-//     try {
-//         e.preventDefault();
-//         if (email === "" || password === "") {
-//           return alert("fill the rows please");
-//         }
-//         const response = await axios.post('http://localhost:4001/api/login',user, {
-//        headers: {
-//         'Content-Type': 'application/json'
-//         }
-//         });
-//         if (response.data === "you are logged") {
-//           return alert("Welcom to zara");
-//         } else {
-//           alert(response.data);
-//         }
-//       } catch (error) {
-//         alert("check your password or email");
-//       }
-// }
+const handleSubmit= async (e:FormEvent)=>{
+    try {
+        e.preventDefault();
+        if (email === "" || password === "") {
+          return alert("fill the rows please");
+        }
+        const response = await axios.post('http://localhost:4001/api/login', {
+          email: email,
+          password: password
+        });
+        if (response.data.message) {
+
+         alert("Welcom to zara");
+         window.location.href='/'
+
+        } else {
+          alert(response.data.message);
+        }
+      } catch (error) {
+        alert("check your password or email");
+      }
+}
 
     return (
         <MDBContainer id="login-container">
@@ -55,11 +53,11 @@ import Link from 'next/link';
             <MDBCol md='6'>
     
               <MDBCardBody id="card-body">
-              <form onSubmit={(e) => handleSubmit(e)}>              
+              <form >              
                 <MDBInput wrapperClass='mb-4' placeholder='E-MAIL' id='form1' type="email" onChange={(e) => setEmail(e.target.value)}/>
-                <MDBInput wrapperClass='mb-4' placeholder='PASSWORD' id='form2' type='password' onChange={(e) => setPassword(e.target.value)}/>
+                <MDBInput wrapperClass='mb-4' placeholder='PASSWORD' id='form1' type='password' onChange={(e) => setPassword(e.target.value)}/>
     
-               <Link href={"/"}> <MDBBtn className="mb-4 login-btn" >Log in</MDBBtn></Link>
+               <MDBBtn className="mb-4 login-btn" onClick={handleSubmit} >Log in</MDBBtn> 
                 </form>
     
                 <div className="d-flex justify-content-between mb-4">
@@ -72,7 +70,7 @@ import Link from 'next/link';
             </MDBCard>
             <MDBCol mdcol={6} mdRrow={19} id="need-account">
               <h3>Need an Account?</h3>
-             <Link href={"/signup"}> <MDBBtn className="mb-4" id="register-btn">Register</MDBBtn></Link> 
+             <Link href={'/signup'}><MDBBtn className="mb-4" id="register-btn">Register</MDBBtn></Link> 
     
             </MDBCol>
           </MDBRow>
