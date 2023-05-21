@@ -16,30 +16,33 @@ import axios from 'axios';
 import Link from 'next/link';
 
 function Signup() {
-     const [firstname, setFirstName] = useState<String>('');
-     const [lastname, setLastName] = useState<String>('');
-     const [email ,setEmail] = useState<String>('');
-     const [password, setPassword] = useState<String>('');
-     const [conpassword, setConPassword] = useState<String>('');
+     const [firstname, setFirstName] = useState<String>("");
+     const [lastname, setLastName] = useState<String>("");
+     const [email ,setEmail] = useState<String>("");
+     const [password, setPassword] = useState<string>("");
+     const [conpassword, setConPassword] = useState<String>("");
 
-    const [error, setError] = useState<string>("");
-  
-    const handleSubmit = () => {
-      axios.post("http://localhost:4001/api/signup", {
+    const handleSubmit = async (e:FormEvent) => {
+     try{  
+      e.preventDefault();
+       axios.post('http://localhost:4001/api/signup', {
         firstname: firstname,
         lastname:lastname,
         email: email,
         password: password,
-        conpassword:conpassword
       })
       .then(suc => {
         console.log(suc);
-        setError('CREATED')
-      })
-      .catch(err => {
+        alert("your account created")
+        window.location.href='/login'
+
+      }) .catch(err => {
         console.log(err);
-        setError(err.response.data);
-      });
+      });}
+      catch (error) {
+        alert("check your password or email");
+      }
+     
     };
       
     return (
@@ -71,7 +74,7 @@ function Signup() {
                     </MDBCol>
                 </MDBRow>
     
-               <Link href={"/login"}> <MDBBtn className="mb-4 signup-btn" onClick={(e)=>{handleSubmit}}>Create Account</MDBBtn></Link>
+                <MDBBtn className="mb-4 signup-btn" onClick={handleSubmit}>Create Account</MDBBtn>
                 </form> 
               </MDBCardBody>
     
