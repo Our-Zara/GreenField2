@@ -19,6 +19,7 @@ app.use("/api", router);
 //app.use("/zara/user",router)
 app.use("/zara/cart",routerC)
 app.use("/zara/product", routerP)
+app.use("/api/products",routerP)
 
 db
 app.listen(port, () => {
