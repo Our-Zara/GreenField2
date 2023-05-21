@@ -68,6 +68,9 @@ const NavBar = () => {
               </Nav.Link>
             </div>
             <div>
+              
+            </div>
+            <div>
             <Nav.Link
                 href="/cart" 
             >
