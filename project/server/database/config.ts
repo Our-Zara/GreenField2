@@ -4,3 +4,4 @@ export default  {
    password:"1919",
    database:"zara"
   } 
+  

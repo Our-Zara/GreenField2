@@ -2,65 +2,65 @@
     border-top-left-radius: 0.5rem;
     border-bottom-left-radius: 0.5rem;
   }
-
-@media (max-width: 550px) {
+  
+  @media (max-width: 550px) {
     .rounded-tr-lg-0 {
-        border-top-right-radius: 0.5rem;
-        border-bottom-left-radius: 0rem;
+      border-top-right-radius: 0.5rem;
+      border-bottom-left-radius: 0rem;
     }
-}
-
-input#form1 {
+  }
+  
+  input#form1 {
     width: 29.482vw;
-}
-
-#signup-container {
+  }
+  
+  #signup-container {
     margin: 0;
     margin-top: 11rem;
     padding: 0;
-}
-
-#signup-card {
+  }
+  
+  #signup-card {
     border: none;
     width: 40vw;
     display: flex;
     justify-self: flex-start;
-}
-
-#signup-page {
+  }
+  
+  #signup-page {
     font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     background-color: white;
     margin-top: 9rem;
     margin-left: 5rem;
-}
-
-#signup-page h1 {
+  }
+  
+  #signup-page h1 {
     margin-left: 1.27em;
     text-transform: uppercase;
     font-size: 14px;
     font-weight: 550;
-}
-
-#signup-page input {
+  }
+  
+  #signup-page input {
     border: none;
     border-radius: 0;
     border-bottom: 1px solid gray;
-}
-
-#signup-page input:focus {
+  }
+  
+  #signup-page input:focus {
     outline: none;
     box-shadow: none;
-}
-
-.card-body {
+  }
+  
+  .card-body {
     padding: 0;
-}
-
-#signup-page input::placeholder {
+  }
+  
+  #signup-page input::placeholder {
     font-size: 10px;
-}
-
-button.signup-btn {
+  }
+  
+  button.signup-btn {
     text-transform: uppercase;
     font-size: 14px;
     font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -68,24 +68,25 @@ button.signup-btn {
     border-radius: 0;
     border: none;
     width: 20vw;
-}
-
-button.signup-btn:hover {
+  }
+  
+  button.signup-btn:hover {
     background-color: rgb(218, 206, 206);
     border-radius: 0;
     border: none;
-}
-
-#signup-card a {
+  }
+  
+  #signup-card a {
     text-decoration: none;
     font-size: 10px;
     color: gray;
-}
-
-.dbl-input .pw-input:last-of-type {
-    margin-left: 2rem
-}
-
-.input {
+  }
+  
+  .dbl-input .pw-input:last-of-type {
+    margin-left: 2rem;
+  }
+  
+  .input {
     width: 30%;
-}
+  }
+  

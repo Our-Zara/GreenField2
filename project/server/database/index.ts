@@ -17,22 +17,47 @@ function insertDummyData(): void {
     data.forEach((product: any) => {
       const { name, image, price, quantity, gender, category, description } = product;
   
-      const query = `
-        INSERT INTO products (name, image, price, quantity, gender, category, description)
-        VALUES (?, ?, ?, ?, ?, ?, ?)
+      // Check if a similar entry already exists
+      const selectQuery = `
+        SELECT COUNT(*) AS count
+        FROM products
+        WHERE name = ? AND gender = ? AND category = ?
       `;
   
-
-      connection.query(query, [name, image, price, quantity, gender, category, description], (error, results) => {
+      connection.query(selectQuery, [name, gender, category], (error, results: any) => {
         if (error) {
-          console.log(`Failed to insert product: ${error}`);
+          console.log(`Error checking for existing entry: ${error}`);
         } else {
-          console.log(`Product inserted successfully`);
+          const count = results[0].count;
+  
+          if (count === 0) {
+            // No similar entry found, proceed with insertion
+            const insertQuery = `
+              INSERT INTO products (name, image, price, quantity, gender, category, description)
+              VALUES (?, ?, ?, ?, ?, ?, ?)
+            `;
+  
+            connection.query(
+              insertQuery,
+              [name, image, price, quantity, gender, category, description],
+              (error, results) => {
+                if (error) {
+                  console.log(`Failed to insert product: ${error}`);
+                } else {
+                  console.log(`Product inserted successfully`);
+                }
+              }
+            );
+          } else {
+            console.log(`Similar entry already exists`);
+          }
         }
       });
     });
-  }  //insertDummyData() 
-
+  }
+  
+  //insertDummyData();
+  
 
 
 
