@@ -5,7 +5,6 @@ import mysql from 'mysql2'
  import config from './config'
 const connection = mysql.createConnection(config)
 import data from './db.json'
-
 const db= connection.connect((error: URIError | null) => {
   if (error) { 
     console.log(error)
