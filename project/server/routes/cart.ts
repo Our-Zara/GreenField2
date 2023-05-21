@@ -5,5 +5,5 @@ const routerC = express.Router()
 
 routerC.get("/user/:id",controller.getCart)
 routerC.delete("/:id",controller.deleteCart)
-
+routerC.post("/add",controller.addCart)
 export default routerC
