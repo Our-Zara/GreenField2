@@ -57,6 +57,7 @@ const userLogin = async (req: Request, res: Response): Promise<void> => {
         },
         "123"
       );
+
  res.status(200).json({
         token: token,
         message: "Authentication successful",

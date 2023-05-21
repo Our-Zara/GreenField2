@@ -22,7 +22,6 @@ function Products() {
         console.log(err);
       });
   };
-
   useEffect(() => {
     fetchData();
   }, []);
@@ -43,6 +42,7 @@ function Products() {
                   {e.name}
                 </span>
                 <span className="mb-3 text-right details" style={{ fontFamily: "Arial, Helvetica, sans-serif", fontSize: "15px", paddingRight:"20px", paddingTop :"5px" }}>${e.price}</span>
+
               </MDBCardBody>
             </MDBCard>
           </MDBCol>
