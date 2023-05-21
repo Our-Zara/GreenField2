@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { MDBInput } from 'mdb-react-ui-kit';
+import { MDBInput ,MDBCardImage } from 'mdb-react-ui-kit';
 import data from '../server/database/db.json';
 import Postdetail from './details'
 import Link from 'next/link';
 interface Product {
-  category: string;
+  name: string;
 }
 
 function Search() {
@@ -14,12 +14,15 @@ function Search() {
     setText(event.target.value);
   };
 
-  const filteredData = data.filter((el: Product) =>
-    el.category.toLowerCase().includes(text.toLowerCase())
+  const filteredData = data.filter((el: any) =>
+    el.name.toLowerCase().includes(text.toLowerCase())
   );
 
   return (
     <form>
+      <div className='card'>
+        <div className='container'>
+        <div >
       <div>
         <MDBInput
           wrapperClass='mb-4'
@@ -29,14 +32,26 @@ function Search() {
           value={text}
           onChange={handleInputChange}
         />
+        
       </div>
-      {filteredData.map((el: Product, index: number) => (
-        <div key={index}>
-          <Link href='/details' el={el} > {el.category} </Link>
-          
-        {/* <Postdetail el={el}/> */}
+      {filteredData.map((el: any, index: number) => (
+        <div key={index} >
+                    <Link href='/details' el={el} > {el.name} </Link> 
+
+                 
+          <MDBCardImage 
+  src={el.image}
+  className="w-100"
+/>
+                
+                  
+        {/* <Postdetail el={el}/> */}   
+
         </div>
       ))}
+      </div>
+      </div>
+      </div>
     </form>
   );
 }
