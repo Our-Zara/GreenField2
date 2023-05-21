@@ -1,5 +1,6 @@
-import model from "../model/cart"
-import { Request, Response } from 'express';
+import model from "../model/cart";
+import { Request, Response } from "express";
+
 
 
 const controller={
@@ -28,5 +29,4 @@ const controller={
     }
 }
 
-
-export default controller
+export default controller;

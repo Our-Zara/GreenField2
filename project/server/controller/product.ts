@@ -88,6 +88,17 @@ const controller = {
       else res.json(results);
     });
   },
+ ///////update quantity ///////
+  updateOneProduct : function (req: Request, res: Response)  {
+  const id:any = req.params.id;
+  const update :any= req.body;
+  model.updateOneProduct(id,update,(err: any, results: any) => {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.status(200).json(results);
+    }
+  });
+}
 };
-
 export { controller };
