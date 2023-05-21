@@ -10,6 +10,7 @@ import {
 } from "mdb-react-ui-kit";
 
 function Products() {
+
   const [gender, setGender] = useState('');
   const [category,setCategory]=useState('');
   const [data,setData]=useState([])
@@ -19,17 +20,21 @@ function Products() {
       .get(`http://localhost:4001/zara/product/${gender}/${category}`)
       .then((res) => {
         setData(res.data);
+        
       })
       .catch((err) => {
         console.log(err);
       });
+      
   };
 
   useEffect(() => {
+    
     setCategory(window.location.pathname.split("/")[2])
     setGender(window.location.pathname.split("/")[1])
-    if (category && gender) {
+        if (category && gender) {
         fetchData();
+       
     }
     
   }, [category, gender]);
@@ -42,10 +47,10 @@ function Products() {
             <MDBCard className="h-100">
               <MDBCardImage src={e.image} alt={e.name} className="w-100" />
               <MDBCardBody className="d-flex flex-row justify-content-between p-0 pt-1.5">
-                <span className="card-title mb-3 text-left details">
+                <span className="card-title mb-3 text-left details" style={{ fontFamily: "Arial, Helvetica, sans-serif", fontSize: "15px", paddingLeft:"20px", paddingTop :"5px" }}>
                   {e.name}
                 </span>
-                <span className="mb-3 text-right details">${e.price}</span>
+                <span className="mb-3 text-right details" style={{ fontFamily: "Arial, Helvetica, sans-serif", fontSize: "15px", paddingRight:"20px", paddingTop :"5px" }}>${e.price}</span>
               </MDBCardBody>
             </MDBCard>
           </MDBCol>

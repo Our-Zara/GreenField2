@@ -39,10 +39,10 @@ function Products() {
   className="w-100" 
 />
               <MDBCardBody className="d-flex flex-row justify-content-between p-0 pt-1.5">
-                <span className="card-title mb-3 text-left details">
+                <span className="card-title mb-3 text-left details" style={{ fontFamily: "Arial, Helvetica, sans-serif", fontSize: "15px", paddingLeft:"20px", paddingTop :"5px" }}>
                   {e.name}
                 </span>
-                <span className="mb-3 text-right details">${e.price}</span>
+                <span className="mb-3 text-right details" style={{ fontFamily: "Arial, Helvetica, sans-serif", fontSize: "15px", paddingRight:"20px", paddingTop :"5px" }}>${e.price}</span>
               </MDBCardBody>
             </MDBCard>
           </MDBCol>
