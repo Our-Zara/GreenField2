@@ -11,8 +11,10 @@ const controller={
           })
     },
     deleteCart:function(req : Request,res : Response){
-        const userID = req.params.id
-        model.delete(userID, (err:any, results:any) => {
+        const prodID = req.params.prod
+        const userID = req.params.user
+
+        model.delete(userID,prodID, (err:any, results:any) => {
             if (err) res.status(500).send(err);
             else res.json(results);
           })

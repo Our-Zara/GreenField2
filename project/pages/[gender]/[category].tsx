@@ -10,6 +10,7 @@ import {
 } from "mdb-react-ui-kit";
 
 function Products() {
+
   const [gender, setGender] = useState('');
   const [category,setCategory]=useState('');
   const [data,setData]=useState([])
@@ -19,17 +20,21 @@ function Products() {
       .get(`http://localhost:4001/zara/product/${gender}/${category}`)
       .then((res) => {
         setData(res.data);
+        
       })
       .catch((err) => {
         console.log(err);
       });
+      
   };
 
   useEffect(() => {
+    
     setCategory(window.location.pathname.split("/")[2])
     setGender(window.location.pathname.split("/")[1])
-    if (category && gender) {
+        if (category && gender) {
         fetchData();
+       
     }
     
   }, [category, gender]);

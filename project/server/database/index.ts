@@ -31,7 +31,7 @@ function insertDummyData(): void {
         }
       });
     });
-  } insertDummyData() 
+  } //insertDummyData() 
 
 
   
