@@ -17,7 +17,8 @@ routerP.get("/women/skirt",controller.getAllSkirt)
 routerP.get("/women/bag",controller.getAllBag)
 routerP.get("/women/perfume",controller.getAllPerfume)
 routerP.get("/men/perfume",controller.getAllPerfumeM)
-
+////update route///
+routerP.put("/:id",controller.updateOneProduct)
 
 
 export default routerP

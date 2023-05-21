@@ -12,10 +12,13 @@ import {
     } from "mdb-react-ui-kit";
  
 import axios from "axios";
-import React,{useState,useEffect} from "react";
+import React,{useState,useEffect, FormEvent} from "react";
 
-    export default function Cart() {
-    const [data, setData] = useState([]);
+    export default function Cart(e:FormEvent) {
+      const [show,setShow]:any=useState(false)
+    const [data, setData] :any= useState([]);
+    const [tracker,setTracker]:any=useState(false)
+    const [productquantity,setproductquantity]:any=useState(e.quantity)
 
   const fetchData = () => {
     axios
@@ -34,7 +37,37 @@ const handleDelete=(prod:number)=>{
   useEffect(() => {
     fetchData();
   }, []);
-
+//////update////////
+  const UpdateProd=(id:any,prod:any)=>{
+    axios.put(`http://localhost:4001/api/products/${id}`,prod)
+    .then((res)=>{
+       console.log(res.data)
+       setTracker(!tracker)
+     })
+     .catch((err)=>{console.log(err)})
+   }
+   const id:any=e.id;
+   const handleUpdate=()=>{
+  UpdateProd(id, {
+    productquantity: productquantity,
+  });
+    setShow(!show)
+}
+const icrementQuanity=()=>{
+  let inc=e.quantity+1
+     UpdateProd(id,{
+      productquantity:inc,
+    });
+}
+const decrementQuanity=()=>{
+  let dec=e.quantity-1
+  UpdateProd(id,{
+    productquantity:dec,
+  });
+ }
+ useEffect(() =>{
+  fetchData()
+},[tracker]);
     return (
     <section style={{ backgroundColor: "white" }}>
               <MDBCardBody>
@@ -67,6 +100,17 @@ const handleDelete=(prod:number)=>{
                 
               </MDBCardBody>
               <div style={{ fontFamily: "Arial, Helvetica, sans-serif", fontSize: "15px", textAlign: "right", paddingRight:"20px", paddingBottom:"5px" }} onClick={() => handleDelete(e.products_id)}>DELETE</div>
+              <p className="card-text">Quantity: {e.productquantity}</p>
+        <button onClick={icrementQuanity} className="btn ">+</button>
+        <button onClick={decrementQuanity} className="btn btn-sm btn-outline-primary">-</button>
+        {show ? 
+        (
+        <div>
+          <input   style={{ width: '150px', marginRight: '10px' }}
+             type="number" className="form-control my-2" placeholder='Quantity' defaultValue={e.productquantity} onChange={(e:any)=>setproductquantity(e.target.value)} />
+             
+             </div>)
+             : <></>}
             </MDBCard>
             
           </MDBCol>

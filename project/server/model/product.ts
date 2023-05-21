@@ -87,6 +87,14 @@ const model = {
       callback(err, result);
     });
   },
+
+  ///////////update quantity of product /////////
+  updateOneProduct : function (id:any, update:any, callback:any){
+    const sql = `UPDATE products SET ? WHERE id = ${id}`;
+    connection.query(sql, update, (err, result) => {
+      callback(err, result);
+    });
+  }
 };
 
 export default model;
