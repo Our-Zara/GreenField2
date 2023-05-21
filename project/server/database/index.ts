@@ -5,7 +5,6 @@ import mysql from 'mysql2'
  import config from './config'
 const connection = mysql.createConnection(config)
 import data from './db.json'
-
 const db= connection.connect((error: URIError | null) => {
   if (error) { 
     console.log(error)
@@ -23,6 +22,7 @@ function insertDummyData(): void {
         VALUES (?, ?, ?, ?, ?, ?, ?)
       `;
   
+
       connection.query(query, [name, image, price, quantity, gender, category, description], (error, results) => {
         if (error) {
           console.log(`Failed to insert product: ${error}`);
@@ -31,7 +31,9 @@ function insertDummyData(): void {
         }
       });
     });
-  } //insertDummyData() 
+  }  //insertDummyData() 
+
+
 
 
   
