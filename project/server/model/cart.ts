@@ -15,7 +15,13 @@ const model={
         connection.query(sql, function (err, result) {
             callback(err, result);
         });
-        }
+        },
+        addToCart(cart:any, callback: (error: Error | null, result: any) => void) {
+            const sql = `INSERT INTO cart (users_id,products_id) values (1,${cart.products_id})`;
+            connection.query(sql, function (err, result) {
+              callback(err, result);
+            });
+          }
     
      
     

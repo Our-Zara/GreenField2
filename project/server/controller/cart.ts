@@ -19,6 +19,13 @@ const controller={
             else res.json(results);
           })
     },
+    addCart : function (req :Request, res : Response){
+        const cart = req.body
+        model.addToCart(cart, (err:any, results:any) => {
+            if (err) res.status(500).send(err);
+            else res.json(results);
+          })
+    }
 }
 
 

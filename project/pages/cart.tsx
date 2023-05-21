@@ -13,13 +13,13 @@ import {
  
 import axios from "axios";
 import React,{useState,useEffect} from "react";
-    
+
     export default function Cart() {
     const [data, setData] = useState([]);
 
   const fetchData = () => {
     axios
-      .get("http://localhost:4001/zara/cart/1")
+      .get("http://localhost:4001/zara/cart/1") 
       .then((res) => {
         setData(res.data);
       })
@@ -59,14 +59,14 @@ const handleDelete=(prod:number)=>{
           <MDBCol  md="12" lg="4" className="mb-4">
             <MDBCard className="h-100">
               <MDBCardImage src={e.image} alt={e.name} className="w-100" />
-              <MDBCardBody className="d-flex flex-row justify-content-between p-0 pt-1.5">
-                <span className="card-title mb-3 text-left details">
+              <MDBCardBody className="d-flex flex-row justify-content-between p-0 pt-1.5" >
+                <span className="card-title mb-3 text-left details" style={{ fontFamily: "Arial, Helvetica, sans-serif", fontSize: "15px", paddingLeft:"20px", paddingTop :"5px" }}>
                   {e.name}
                 </span>
-                <span className="mb-3 text-right details">${e.price}</span>
+                <span className="mb-3 text-right details" style={{ fontFamily: "Arial, Helvetica, sans-serif", fontSize: "15px", paddingRight:"20px", paddingTop :"5px" }}>${e.price}</span>
                 
               </MDBCardBody>
-              <div style={{ fontFamily: "Arial, Helvetica, sans-serif", fontSize: "15px", textAlign: "right", paddingRight:"20px" }} onClick={() => handleDelete(e.products_id)}>DELETE</div>
+              <div style={{ fontFamily: "Arial, Helvetica, sans-serif", fontSize: "15px", textAlign: "right", paddingRight:"20px", paddingBottom:"5px" }} onClick={() => handleDelete(e.products_id)}>DELETE</div>
             </MDBCard>
             
           </MDBCol>
